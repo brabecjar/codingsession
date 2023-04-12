@@ -32,7 +32,7 @@ public class FibonacciTest {
 
     @Test
     public void testFibonacciLargeInput() {
-        assertTimeout(Duration.ofSeconds(5), () -> {
+        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
             assertEquals(1836311903, Fibonacci.fibonacci(46));
         });
     }
