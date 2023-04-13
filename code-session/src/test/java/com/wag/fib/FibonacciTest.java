@@ -19,6 +19,11 @@ public class FibonacciTest {
     }
 
     @Test
+    public void testFibonacciSix() {
+        assertEquals(8, Fibonacci.fibonacci(6));
+    }
+
+    @Test
     public void testFibonacciTen() {
         assertEquals(55, Fibonacci.fibonacci(10));
     }
@@ -32,8 +37,8 @@ public class FibonacciTest {
 
     @Test
     public void testFibonacciLargeInput() {
-        assertTimeoutPreemptively(Duration.ofSeconds(5), () -> {
-            assertEquals(1836311903, Fibonacci.fibonacci(46));
+        assertTimeoutPreemptively(Duration.ofSeconds(1), () -> {
+            assertEquals(12586269025L, Fibonacci.fibonacci(50));
         });
     }
 
