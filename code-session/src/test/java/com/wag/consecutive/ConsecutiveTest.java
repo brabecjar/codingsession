@@ -20,7 +20,7 @@ public class ConsecutiveTest {
     @Test
     public void testFindConsecutiveWithNegativeNumbers() {
         List<Integer> numbers = new ArrayList<>(Arrays.asList(-5, -2, -1, 0, 1, 2, 3, 4, 5));
-        List<Integer> expectedOutput = new ArrayList<>(Arrays.asList(-1, 0, 1, 2, 3, 4, 5));
+        List<Integer> expectedOutput = new ArrayList<>(Arrays.asList(-2, -1, 0, 1, 2, 3, 4, 5));
         assertEquals(expectedOutput, Consecutive.findLongestConsecutiveSubsequence(numbers));
     }
 
