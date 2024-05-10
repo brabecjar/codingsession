@@ -14,7 +14,9 @@ public class SecondLargest {
      * </ul>
      */
     public static int findSecondLargest(List<Integer> integers) {
-        //TODO Your implementation
-        return 0;
+        //TODO Your implementation -> you are right, the easiest way to loop it twice.
+        var secondMax = Integer.MIN_VALUE;
+        var max = integers.stream().max(Integer::compareTo).get();
+        return integers.stream().filter(i -> i > secondMax && !i.equals(max)).max(Integer::compareTo).get();
     }
 }
