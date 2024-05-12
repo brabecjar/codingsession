@@ -1,6 +1,7 @@
 package com.wag.second;
 
 import java.util.List;
+import java.util.Objects;
 
 public class SecondLargest {
 
@@ -14,8 +15,39 @@ public class SecondLargest {
      * </ul>
      */
     public static int findSecondLargest(List<Integer> integers) {
-        //TODO Your implementation -> you are right, the easiest way to loop it twice.
-        var max = integers.stream().max(Integer::compareTo).get();
-        return integers.stream().filter(i -> !i.equals(max)).max(Integer::compareTo).get();
+        //TODO Your implementation -> you are right, the easiest way to loop it twice:
+//        if (Objects.isNull(integers) || integers.isEmpty()) return 0;
+//        var max = integers.stream().max(Integer::compareTo).orElse(0);
+//        return integers.stream().filter(i -> !i.equals(max)).max(Integer::compareTo).orElse(0);
+
+        // but no need to go through whole loop 2 times (e.g. what if 10m items - less efficient):
+        // first let's check edge cases:
+        if (Objects.isNull(integers) || integers.isEmpty()) return 0;
+
+        if (integers.size() < 2) return integers.get(0);
+
+        if (integers.size() == 2) {
+            return integers.get(0) > integers.get(1) ? integers.get(1) : integers.get(0);
+        }
+        // secondly main logic:
+        return getSecondLargest(integers);
+    }
+
+    private static int getSecondLargest(List<Integer> integers) {
+        boolean isFirstValBigger = integers.get(0) > integers.get(1);
+        int max = integers.get(isFirstValBigger ? 0 : 1);
+        int goal = integers.get(isFirstValBigger ? 1 : 0);
+
+        for (int i = 2; i < integers.size(); i++) {
+            int current = integers.get(i);
+            if (max < current) {
+                goal = max;
+                max = current;
+            }
+            if(current > goal && current < max){
+                goal = current;
+            }
+        }
+        return goal;
     }
 }
