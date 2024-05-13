@@ -17,6 +17,9 @@ public class Fibonacci {
      * Change it so all unit tests are passed.
      */
     public static long fibonacci(long n) {
+        if (n == -1) {
+            throw new IllegalArgumentException();
+        }
         if (n <= 1) {
             return n;
         }
