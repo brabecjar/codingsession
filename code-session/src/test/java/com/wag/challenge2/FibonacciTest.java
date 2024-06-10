@@ -1,4 +1,4 @@
-package com.wag.fib;
+package com.wag.challenge2;
 
 import org.junit.jupiter.api.Test;
 

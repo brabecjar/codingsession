@@ -1,4 +1,4 @@
-package com.wag.fib;
+package com.wag.challenge2;
 
 public class Fibonacci {
 

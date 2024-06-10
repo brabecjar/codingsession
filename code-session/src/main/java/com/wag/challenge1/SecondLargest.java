@@ -1,4 +1,4 @@
-package com.wag.second;
+package com.wag.challenge1;
 
 import java.util.List;
 
