@@ -31,4 +31,10 @@ public class SecondLargestTest {
         assertEquals(5, SecondLargest.findSecondLargest(integers));
     }
 
+    @Test
+    public void testFindSecondLargestWithMoreElementsInTheArray() {
+        List<Integer> integers = List.of(6, 3, 2, 5, 4);
+        assertEquals(5, SecondLargest.findSecondLargest(integers));
+    }
+
 }
