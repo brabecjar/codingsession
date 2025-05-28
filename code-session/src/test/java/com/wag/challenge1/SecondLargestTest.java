@@ -37,4 +37,16 @@ public class SecondLargestTest {
         assertEquals(5, SecondLargest.findSecondLargest(integers));
     }
 
+    @Test
+    public void testFindSecondLargestWithNegativeElementsInTheArray() {
+        List<Integer> integers = List.of(-1, 0, 2, 5, 4);
+        assertEquals(4, SecondLargest.findSecondLargest(integers));
+    }
+
+    @Test
+    public void testFindSecondLargestWithNegativeElementsInTheArray2() {
+        List<Integer> integers = List.of(-1, 0, 2, 5, -3);
+        assertEquals(2, SecondLargest.findSecondLargest(integers));
+    }
+
 }
